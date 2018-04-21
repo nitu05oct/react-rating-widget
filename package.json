@@ -1,0 +1,25 @@
+{
+  "name": "starratingwidget",
+  "version": "1.0.0",
+  "description": "Tiny React JS component for star Ratings",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitu05oct/starRatingWidget.git"
+  },
+  "keywords": [
+    "react",
+    "start",
+    "rating",
+    "component"
+  ],
+  "author": "Nivedita Sood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nitu05oct/starRatingWidget/issues"
+  },
+  "homepage": "https://github.com/nitu05oct/starRatingWidget#readme"
+}
