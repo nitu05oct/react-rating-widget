@@ -1,7 +1,7 @@
 {
-  "name": "star-rating-react",
+  "name": "react-rating-widget",
   "version": "1.0.0",
-  "description": "A simple, highly customisable star rating component",
+  "description": "A simple, highly customisable rating component",
   "author": "nitu05oct",
   "license": "MIT",
   "repository": "https://github.com/nitu05oct/starRatingWidget",
