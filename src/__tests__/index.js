@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import StarRating from '../../StarRating';
+import RatingWidget from '../index';
 
 const props = {
   id: '3',
@@ -20,35 +20,15 @@ const props = {
 describe('Star Rating', () => {
   const id = 1; // star selected-- index starts from 0
 
-  const wrapper = mount(<StarRating {...props} />);
+  const wrapper = mount(<RatingWidget {...props} />);
 
   it('Should Exist', () => {
     expect(wrapper).toBeTruthy();
   });
 
-  it('Should show question text', () => {
-    expect(wrapper.text()).toContain('Please rate your Experience with us');
-  });
-
+  
   it('Should show star widget to rate', () => {
-    expect(wrapper.find('Star').exists()).toBe(true);
+    expect(wrapper.find('Icon').exists()).toBe(true);
   });
 
-  describe('Should show Hunkydory Image', () => {
-    it('Default Hunkydory image is shown', () => {
-      expect(wrapper.find('#hunkydory').exists()).toBe(true);
-    });
-
-    it('should show hunkydory-1.svg when First Star is clicked ', () => {
-      wrapper.instance().updateRating(id);
-      wrapper.instance().forceUpdate();
-      wrapper.update();
-      expect(
-        wrapper
-          .find('#hunkydory')
-          .parent()
-          .debug(),
-      ).toContain('hunkydory-1.svg');
-    });
-  });
 });

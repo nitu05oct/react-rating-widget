@@ -4,7 +4,7 @@ import Rating from '../Rating';
 
 const props = {
   rating: 1,
-  text: "it's ok ngfgfh",
+  text: "it's ok!",
 };
 
 describe('Rating reaction', () => {

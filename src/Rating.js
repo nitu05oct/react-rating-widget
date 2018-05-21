@@ -4,13 +4,20 @@ import s from './styles';
 
 const Rating = props => {  
 
-const { rating, text } = props;
-  return (
-    <div style = {rating > 0 ? s.reactionShow : s.reactionHide}>
+const { rating, text , reactionStyle } = props;
+
+const reaction = {...reactionStyle, 
+  opacity: rating > 0 ? '1':'0',
+  display: rating > 0 ? 'block':'none',   
+};
+
+return (
+    <div style = {reaction}>
       <span>{text}</span>
     </div>
   );
 };
+
 Rating.defaultProps = {
   text: '',
 };
