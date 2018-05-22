@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import RatingWidget from 'star-rating-react'
 
@@ -30,17 +30,15 @@ const InactiveStar = () => {
   return <div style={styles} ></div>;
 };
 
-export default class App extends Component {
-
-
+export default class App extends PureComponent {
 
   storeAnswers(answer)
   {
-  	console.log("here",answer);
+  	alert("You have rated us " + answer.answer);
   }
 
   render () {
-  	const ratingReactions = {1: "Hated it!", 2: "Disliked it!", 3: "It's OK!", 4: "Liked it!", 5: "Loved it!" , 6: "Loved it!"};
+  	const ratingReactions = {1: "Hated it!", 2: "Disliked it!", 3: "It's OK!", 4: "Liked it!", 5: "Loved it!"};
     
     const reactionStyle = {
     textAlign: 'center',
@@ -53,14 +51,15 @@ export default class App extends Component {
     margin: '30px auto 0',
     transition: '0.2s all ease-in-out',
     };
-  
+
     return (
     <React.Fragment>
+      <h2>Rating Widget with Reaction Labels</h2>
       <div>
         <RatingWidget iconCount={6}  reactionLables={ratingReactions} reactionStyle= {reactionStyle} storeAnswers={this.storeAnswers.bind(this)}/>
       </div>
 
-       <h2> Star Rating Widget custom Images and css</h2>
+       <h2>Rating Widget with customizable icon Styling</h2>
       <div>
         <RatingWidget IconStyleActive = { ActiveStar } IconStyleInactive =  { InactiveStar } storeAnswers={this.storeAnswers.bind(this)}/>
       </div>
