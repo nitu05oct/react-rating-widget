@@ -1,26 +1,47 @@
-/**
- * @class ExampleComponent
- */
+import React from 'react';
+import PropTypes from 'prop-types';
+import Icon from './Icon';
+import Rating from './Rating';
+import s from './styles';
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+class RatingWidget extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rating: 0,
+    };
+    this.updateRating = this.updateRating.bind(this);
+  }
 
-import styles from './styles.css'
-
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
+  updateRating(rating) {
+    this.setState({ rating });
+    this.props.storeAnswers({ answer: rating.toString() });
   }
 
   render() {
-    const {
-      text
-    } = this.props
-
     return (
-      <div className={styles.test}>
-        Example Component: {text}
+      <div style={s.widgetWapper}>
+          <div style={s.ratingIconWrapper}>
+            <Icon {...this.props} rating={this.state.rating} updateRating={this.updateRating} />
+          </div>
+          {this.props.reactionLables && JSON.stringify(this.props.reactionLables) !== '{}' && <Rating rating={this.state.rating} text={this.props.reactionLables[this.state.rating]} reactionStyle={this.props.reactionStyle}/>}
       </div>
-    )
+    );
   }
 }
+RatingWidget.defaultProps = {
+  reactionLables: {},
+};
+
+RatingWidget.propTypes = {
+ reactionLables: PropTypes.shape({
+    value: PropTypes.string,
+    text: PropTypes.bool,
+  }),
+  storeAnswers: PropTypes.func.isRequired,
+  IconStyleActive: PropTypes.func,
+  IconStyleInactive: PropTypes.func,
+  reactionLablesStyle:  PropTypes.object,
+};
+
+export default RatingWidget;

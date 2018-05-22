@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import RatingWidget from './'
 
-describe('ExampleComponent', () => {
+describe('RatingWidget', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(RatingWidget).toBeTruthy()
   })
 })
