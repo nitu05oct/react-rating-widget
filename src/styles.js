@@ -1,15 +1,15 @@
-const styles = {};
+const styles = {}
 
 styles.ratingIconWrapper = {
-      width: '100%',
-      display: 'flex',
-      justifyContent: 'center',
-    };
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center'
+}
 
 styles.widgetWapper = {
-      display: 'flex',
-      flexDirection: 'column',
-      textAlign: 'center',
-    };
+  display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center'
+}
 
-export default styles;
+export default styles

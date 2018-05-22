@@ -56,17 +56,14 @@ export default class App extends PureComponent {
     <React.Fragment>
       <h2>Rating Widget with Reaction Labels</h2>
       <div>
-        <RatingWidget iconCount={6}  reactionLables={ratingReactions} reactionStyle= {reactionStyle} storeAnswers={this.storeAnswers.bind(this)}/>
+        <RatingWidget iconCount={5}  reactionLables={ratingReactions} reactionStyle= {reactionStyle} storeAnswers={this.storeAnswers.bind(this)}/>
       </div>
 
        <h2>Rating Widget with Customizable icon Styling : Example Stars</h2>
       <div>
         <RatingWidget IconStyleActive = { ActiveStar } IconStyleInactive =  { InactiveStar } storeAnswers={this.storeAnswers.bind(this)}/>
       </div>
-
     </React.Fragment>
-
-
     )
   }
 }
