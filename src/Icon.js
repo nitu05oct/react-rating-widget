@@ -58,7 +58,7 @@ const IconStyle = color => {
     </React.Fragment>)
 }
 
-class Icon extends React.Component {
+class Icon extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {

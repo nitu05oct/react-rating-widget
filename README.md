@@ -26,25 +26,58 @@ import React, { PureComponent } from 'react'
 
 import RatingWidget from 'star-rating-react'
 
+const ActiveStar = () => {
+
+  const styles = {
+    width: '50px',
+    height: '50px',
+    background: 'url(./assets/star-hover.svg) no-repeat center center',
+    ...
+    }; 
+
+  return <div style={styles} ></div>;
+};
+
+
+const InactiveStar = () => {
+
+  const styles = {
+    width: '50px',
+    height: '50px',
+    background: 'url(./assets/star.svg) no-repeat center center',
+    ...
+    };
+
+  return <div style={styles} ></div>;
+};
+
+const ratingReactions = {1: "Hated it!", 2: "Disliked it!", 3: "It's OK!", 4: "Liked it!", 5: "Loved it!"};
+    
+const reactionStyle = {
+    textAlign: 'center',
+    padding: '7px 0 4px',
+    ...
+    };
 
 export default class App extends PureComponent {
 
   /* onClick Handler to store/process rating selected by user */ 
   storeAnswers(answer)
   {
-  	console.log("here",answer);
+  	console.log("You have rated us " + answer.answer);
+  	...
   }
 
   render () {
     return (
     <div>
         <RatingWidget 
-	iconCount={6}
-	IconStyleActive = { ActiveStar }
-	IconStyleInactive =  { InactiveStar }
-	storeAnswers={this.storeAnswers.bind(this)}
-	reactionLables={ratingReactions}
-	reactionStyle= {reactionStyle}
+		iconCount={6}
+		IconStyleActive = { ActiveStar }
+		IconStyleInactive =  { InactiveStar }
+		storeAnswers={this.storeAnswers.bind(this)}
+		reactionLables={ratingReactions}
+		reactionStyle= {reactionStyle}
         />
     </div>
     )
