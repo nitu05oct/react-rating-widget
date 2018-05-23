@@ -4,48 +4,51 @@ import times from 'lodash/times'
 import PropTypes from 'prop-types'
 
 const IconStyle = color => {
-  const stylesMain = {
-    margin: '15px 0',
-    color: color,
-    position: 'relative',
-    display: 'block',
+  const stylesMain = { ...{
     width: '0px',
     height: '0px',
-    borderRight: '20px solid transparent',
+    margin: '10px 5px',
+    color: color,
+    position: 'relative',
+    display: 'inline-block',   
+    borderRight: '13px solid transparent',
     borderBottomColor: color,
-    borderBottom: '12px solid',
-    borderLeft: '20px solid transparent',
-    transform: 'rotate(35deg)',
-    cursor: 'pointer' }
+    borderBottom: '9px solid',
+    borderLeft: '13px solid transparent',
+    cursor: 'pointer' ,
+    margin: '0 8px'
+  },
+  transform: color === '#00bcd5' ? 'rotate(35deg) scale(1.5)' : 'rotate(35deg)',
+}
 
   const stylesBefore = {
-    borderBottom: '15px solid',
+    borderBottom: '10px solid',
     borderBottomColor: color,
-    borderLeft: '6px solid transparent',
-    borderRight: '6px solid transparent',
+    borderLeft: '4px solid transparent',
+    borderRight: '4px solid transparent',
     position: 'absolute',
     height: '0px',
     width: '0px',
-    top: '-8px',
-    left: '-12px',
+    top: '-6px',
+    left: '-8px',
     transform: 'rotate(-35deg)'
   }
 
   const stylesAfter = {
     position: 'absolute',
-    display: 'block',
     color: color,
-    top: '2px',
-    left: '-21px',
+    top: '1.30px',
+    left: '-13px',
     width: '0px',
     height: '0px',
-    borderRight: '20px solid transparent',
-    borderBottom: '12px solid',
+    borderRight: '13px solid transparent',
+    borderBottom: '8px solid',
     borderBottomColor: color,
-    borderLeft: '20px solid transparent',
-    transform: 'rotate(-70deg)'
+    borderLeft: '13px solid transparent',
+    transform: 'rotate(-68deg)'
   }
 
+  
   return (
     <React.Fragment>
       <div style={stylesMain} >
@@ -90,7 +93,7 @@ class Icon extends React.Component {
             onMouseOver={() => this.setRating(index, 'hover')}
             onMouseOut={this.reset}
             val={value}>
-            {IconStyleActive && IconStyleActive('blue')}
+            {IconStyleActive && IconStyleActive('#00bcd5')}
           </div>
         )
       }
@@ -102,7 +105,7 @@ class Icon extends React.Component {
           onMouseOut={this.reset}
           val={value}
         >
-          {IconStyleInactive && IconStyleInactive('red')}
+          {IconStyleInactive && IconStyleInactive('#d3cccc')}
         </div>
       )
     })

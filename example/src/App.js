@@ -34,7 +34,7 @@ export default class App extends PureComponent {
 
   storeAnswers(answer)
   {
-  	alert("You have rated us " + answer.answer);
+  	console.log("You have rated us " + answer.answer);
   }
 
   render () {
@@ -48,22 +48,22 @@ export default class App extends PureComponent {
     borderRadius: '20px',
     backgroundColor: '#fdedee',
     width: '97px',
-    margin: '30px auto 0',
+    margin: '20px auto 0',
     transition: '0.2s all ease-in-out',
     };
 
     return (
-    <React.Fragment>
-      <h2>Rating Widget with Reaction Labels</h2>
-      <div>
-        <RatingWidget iconCount={5}  reactionLables={ratingReactions} reactionStyle= {reactionStyle} storeAnswers={this.storeAnswers.bind(this)}/>
-      </div>
+    <div style={{position:'relative'}}>
+	      <h3 style={{textAlign: 'center' }}>Rating Widget with Reaction Labels</h3>
+	      <div>
+	        <RatingWidget iconCount={5}  reactionLables={ratingReactions} reactionStyle= {reactionStyle} storeAnswers={this.storeAnswers.bind(this)}/>
+	      </div>
 
-       <h2>Rating Widget with Customizable icon Styling : Example Stars</h2>
-      <div>
-        <RatingWidget IconStyleActive = { ActiveStar } IconStyleInactive =  { InactiveStar } storeAnswers={this.storeAnswers.bind(this)}/>
-      </div>
-    </React.Fragment>
+	       <h3 style={{textAlign: 'center' , position:'absolute' , left:'30%' , top:'130px' }}>Rating Widget with Customizable icon Styling : Example Stars</h3>
+	      <div style={{position:'absolute' , left:'41%' , top:'170px' }}>
+	        <RatingWidget IconStyleActive = { ActiveStar } IconStyleInactive =  { InactiveStar } storeAnswers={this.storeAnswers.bind(this)}/>
+	      </div>
+    </div>
     )
   }
 }
