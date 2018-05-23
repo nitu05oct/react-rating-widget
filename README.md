@@ -8,9 +8,10 @@
 
 ## Why it's better
 
- - Customizable
- - Tested on all major Bowsers
- - Thoroughly tested
+ - Support Theme Customization
+ - Support Callback Handlers
+ - Thoroughly tested on all browsers
+ - With TDDs
 
 ## Install
 
