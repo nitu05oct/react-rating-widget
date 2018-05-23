@@ -11,6 +11,7 @@
  - Support Theme Customization
  - Support Callback Handlers
  - Thoroughly tested on all browsers
+ - Responsive
  - With TDDs
 
 ## Install
