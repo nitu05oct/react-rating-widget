@@ -17,7 +17,7 @@
 ## Install
 
 ```bash
-npm install --save star-rating-react
+npm install --save react-rating-widget
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ npm install --save star-rating-react
 ```jsx
 import React, { PureComponent } from 'react'
 
-import RatingWidget from 'star-rating-react'
+import RatingWidget from 'react-rating-widget'
 
 const ActiveStar = () => {
 

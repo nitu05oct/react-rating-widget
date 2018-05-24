@@ -53,14 +53,16 @@ export default class App extends PureComponent {
     };
 
     return (
-    <div style={{position:'relative'}}>
-	      <h3 style={{textAlign: 'center' }}>Rating Widget with Reaction Labels</h3>
+    <div>
+
+	      <h3>Example 1: Rating Widget with Reaction Labels</h3>
 	      <div>
 	        <RatingWidget iconCount={5}  reactionLables={ratingReactions} reactionStyle= {reactionStyle} storeAnswers={this.storeAnswers.bind(this)}/>
 	      </div>
-
-	       <h3 style={{textAlign: 'center' , position:'absolute' , left:'30%' , top:'130px' }}>Rating Widget with Customizable icon Styling : Example Stars</h3>
-	      <div style={{position:'absolute' , left:'41%' , top:'170px' }}>
+        <br />
+        <br />
+	      <h3>Example 2: Rating Widget with Customizable icon Styling : Example Stars</h3>
+	      <div>
 	        <RatingWidget IconStyleActive = { ActiveStar } IconStyleInactive =  { InactiveStar } storeAnswers={this.storeAnswers.bind(this)}/>
 	      </div>
     </div>
